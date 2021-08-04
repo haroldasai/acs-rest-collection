@@ -90,7 +90,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"from\": \"+18445816899\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test using Managed Identity\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n  }"
+											"raw": "{\r\n    \"from\": \"+1XXXXXXXXXX\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test using Managed Identity\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n  }"
 										},
 										"url": {
 											"raw": "https://jameelaesaacs.communication.azure.com/sms?api-version=2021-03-07",
@@ -185,7 +185,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"from\": \"+18445816899\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n}",
+											"raw": "{\r\n    \"from\": \"+1XXXXXXXXXX\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
