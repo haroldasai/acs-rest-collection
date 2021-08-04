@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "47277a9b-a6de-47ab-9f70-4fec8f90dde4",
+		"name": "ACS REST Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SMS",
+			"item": [
+				{
+					"name": "Send",
+					"item": [
+						{
+							"name": "Managed Identity",
+							"item": [
+								{
+									"name": "Azure Active Directory Bearer Token for ACS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{clientId}}",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{clientSecret}}",
+													"type": "text"
+												},
+												{
+													"key": "resource",
+													"value": "{{resource}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+											"protocol": "https",
+											"host": [
+												"login",
+												"microsoftonline",
+												"com"
+											],
+											"path": [
+												"{{tenantId}}",
+												"oauth2",
+												"token"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ACS SMS send request - Management Identity",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJodHRwczovL2NvbW11bmljYXRpb24uYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJpYXQiOjE2MjU3OTAxMjYsIm5iZiI6MTYyNTc5MDEyNiwiZXhwIjoxNjI1ODc2ODI2LCJhaW8iOiJFMlpnWUZEN1Z0aDdmb0wvejExdXF4Vk9UR0g3QUFBPSIsImFwcGlkIjoiMDY5ZTkyZmEtZWMyNy00ZTY4LTljZmUtMGQ5MDAwZGUwODUxIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsIm9pZCI6Ijg4M2M3YjdkLTcxZGMtNGZiOC1iNTRiLTFjYTU1MWUwMjhmZiIsInJoIjoiMC5BUm9BdjRqNWN2R0dyMEdScXkxODBCSGJSX3FTbmdZbjdHaE9uUDROa0FEZUNGRWFBQUEuIiwic3ViIjoiODgzYzdiN2QtNzFkYy00ZmI4LWI1NGItMWNhNTUxZTAyOGZmIiwidGlkIjoiNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3IiwidXRpIjoiMDZ1MnpwcC02a3VFa3ZRUW4wSS1BQSIsInZlciI6IjEuMCJ9.dXSa3XduQJIaHWGX3aybt8LGSOu7L1EpoLCwNtkiXv_IxPti4M9K46VveDrzPscT1yxBrjQzau91rDPCpxpB5UgLhmEUk9LWHRYgQcRRNLiUNS9j4oM7FPEjnxORoU1GlYt9jFTEbPhpOxVbietLclgsfO17W8K-8zKK0nC0PoirrXlJ3UGuCKoEY7fd-j4zcVlxsmy94OkelO31LHPtkhcfEJY8jvo9Szxx1gdvuYhEOk2EZu985B8cyikQTukgE7QSy6oRa5I4jId0OGH5hu711mx_Bd8nr7HQo-rH9CsBhYikP4FoyhEKYhx2nLN-YbZRHzeYbtnKgA0Oo26dNQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNjI1NzczMzkyLCJuYmYiOjE2MjU3NzMzOTIsImV4cCI6MTYyNTg2MDA5MiwiYWlvIjoiRTJaZ1lOaTcvc21OY3JZSmhuOHFyZSt3dEU3ZkFBQT0iLCJhcHBpZCI6IjA2OWU5MmZhLWVjMjctNGU2OC05Y2ZlLTBkOTAwMGRlMDg1MSIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiI4ODNjN2I3ZC03MWRjLTRmYjgtYjU0Yi0xY2E1NTFlMDI4ZmYiLCJyaCI6IjAuQVJvQXY0ajVjdkdHcjBHUnF5MTgwQkhiUl9xU25nWW43R2hPblA0TmtBRGVDRkVhQUFBLiIsInN1YiI6Ijg4M2M3YjdkLTcxZGMtNGZiOC1iNTRiLTFjYTU1MWUwMjhmZiIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJXVyIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInV0aSI6IlltdTdxa21rVmtlOGFoMHMySnN5QUEiLCJ2ZXIiOiIxLjAifQ.HIABx2YXhPfhKUQJTnemVgXvczefG2N4KXUpNY2qeVK98XVHp-aGb16N5K8MZQE9LVVR4h40nFpGSmzWliDKPc9MTXzvqTVLuXmQaqW-w0nUPHJqFuwUiL5jzTzVg1Je55OtsuLmbnqtc91HaxOqeZP4-ukpr1l7SXXIxHlCBBBpjWE6Ep0svE5wBMewloGZui0KnS-F7Les-bV4TUZDRP4305js3jXl0wR26nJMV2ji8TH_zz7OamNiOEht7meXK70PDOlxn1xdGNYVJiC_7I3rowYZlJRUnDp8BnTWqqxaj9MHB2JXvNiFrOLaV9oy2MSkLXc2Px5BaXu34cK7QA",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"from\": \"+18445816899\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test using Managed Identity\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n  }"
+										},
+										"url": {
+											"raw": "https://jameelaesaacs.communication.azure.com/sms?api-version=2021-03-07",
+											"protocol": "https",
+											"host": [
+												"jameelaesaacs",
+												"communication",
+												"azure",
+												"com"
+											],
+											"path": [
+												"sms"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "2021-03-07"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Application Key",
+							"item": [
+								{
+									"name": "Azure SMS send request - Application Key",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var date = new Date().toUTCString(); \r",
+													"pm.request.headers.add({key:'x-ms-date', value: date});\r",
+													"\r",
+													"\r",
+													"const hashedBodyStr = CryptoJS.SHA256(pm.request.body.raw).toString(CryptoJS.enc.Base64);\r",
+													"pm.request.headers.add({\r",
+													"    key:'x-ms-content-sha256',\r",
+													"    value: hashedBodyStr\r",
+													"});\r",
+													"\r",
+													"// Get our previously specified endpoint variable\r",
+													"const endpoint = pm.variables.get('endpoint');\r",
+													"// Remove the https, prefix to create a suitable \"Host\" value\r",
+													"const hostStr = endpoint.replace('https://','');\r",
+													"\r",
+													"const url = pm.request.url.toString().replace('{{endpoint}}','');\r",
+													"\r",
+													"const stringToSign = pm.request.method + '\\n' + url + '\\n' + date + ';' + hostStr + ';' + hashedBodyStr;\r",
+													"\r",
+													"const key = CryptoJS.enc.Base64.parse(pm.variables.get('key'));\r",
+													"// Sign our previously calculated string with HMAC 256 and our key. Convert it to Base64.\r",
+													"const signature = CryptoJS.HmacSHA256(stringToSign, key).toString(CryptoJS.enc.Base64);\r",
+													"\r",
+													"// Add our final signature in Base64 to the authorization header of the request.\r",
+													"pm.request.headers.add({\r",
+													"    key:'Authorization',\r",
+													"    value: \"HMAC-SHA256 SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature=\" + signature\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-ms-date",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "x-ms-content-sha256",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"from\": \"+18445816899\",\r\n    \"smsRecipients\": [\r\n      {\r\n        \"to\": \"+1xxxxxxxxxx\"\r\n      }\r\n    ],\r\n    \"message\": \"Row API Call Test\",\r\n    \"smsSendOptions\": {\r\n      \"enableDeliveryReport\": true,\r\n      \"tag\": \"testSmsRequest\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{endpoint}}/sms?api-version=2021-03-07",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"sms"
+											],
+											"query": [
+												{
+													"key": "api-version",
+													"value": "2021-03-07"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
