@@ -1,1 +1,1 @@
-import json file to postman to use
+import json file into postman to use
